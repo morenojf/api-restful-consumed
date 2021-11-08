@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "86c0b039-0f45-4007-9914-3253057d3a60"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -69,6 +72,7 @@
           "configurations": {
             "production": {
               "browserTarget": "api-restful-betaversion:build:production"
+
             },
             "development": {
               "browserTarget": "api-restful-betaversion:build:development"

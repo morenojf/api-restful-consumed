@@ -1,0 +1,52 @@
+<section>
+    <div class="container  m-4">
+        <form class="row row-cols-lg-auto g-3 justify-content-center">
+            <div class="col-12">
+                <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
+                <div class="input-group">
+                    <div class="input-group-text">@</div>
+                    <input [(ngModel)]="formUser.username" name="username" type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username" />
+                </div>
+            </div>
+
+
+            <div class="col-12">
+                <label class="visually-hidden" for="inlineFormInputGroupEmail">Email</label>
+                <div class="input-group">
+                    <input [(ngModel)]="formUser.email" name="email" type="email" class="form-control" id="inlineFormInputGroupEmail" placeholder="email" />
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label class="visually-hidden" for="inlineFormInputGroupPassword">Password</label>
+                <div class="input-group">
+                    <input [(ngModel)]="formUser.password" name="password" type="password" class="form-control" id="inlineFormInputGroupPassword"
+                        placeholder="password" />
+                </div>
+            </div>
+
+            <div class="col-12">
+                <button (click)="saveUserDB()" type="submit" class="btn btn-primary">Añadir Usuario</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+
+
+<section>
+    <div class="container">
+        <div *ngIf="users" class="row row-cols-1 row-cols-md-3 g-4">
+            <div *ngFor='let user of users;' class="card">
+                <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..." />
+                <h5 class="card-header">@{{user.username}}</h5>
+                <div class="card-body">
+                    <h5 class="card-title">{{user.email}}</h5>
+                    
+                    <a (click)="deleteUserDB()" class="btn btn-danger"><i class="fas fa-user-times"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
